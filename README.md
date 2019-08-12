@@ -29,9 +29,15 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 1.启动mongodb 
-    cmd中 mongod --dbpath "C:\Program Files\MongoDB\Server\4.0\data\db"
-    再运行  mongo
+```
+cmd中 mongod --dbpath "C:\Program Files\MongoDB\Server\4.0\data\db"
+```
+再运行  mongo
+```
 2.运行Vue.cli
-    终端 npm run serve
+```
+npm run serve
+```
 3.服务端热修改 
-    nodemon serve
+```
+nodemon serve
