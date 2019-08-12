@@ -1,0 +1,13 @@
+@uri=http://localhost:3001/
+###
+POST {{uri}}api/register
+Content-Type: application/json 
+
+{
+    "username": "khd",
+    "password": "777"
+}
+
+###
+GET {{uri}}api/soldierform/5cf8cdc4669cd73254d824cd
+ 
