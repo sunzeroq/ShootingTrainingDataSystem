@@ -95,24 +95,22 @@
       fetch(){
         this.$http.get(`soldierform/${this.$route.params.id}`).then(res =>{
           this.SoldierForm = res.data
-        })
+  
+          let arr = res.data.domains
+          for (let index = 0; index < arr.length; index++) {
+            const element = arr[index]
+            let num = arr[index].text
+            // this.chartData.rows[index] = {'靶次':num, '成绩':arr[index].value} 
+            this.$set(this.chartData.rows, index, {'靶次':num, '成绩':arr[index].value})
+            }
+          })
       },
     
     },
     created(){
         this.fetch()
         this.$http.get(`soldierform/${this.$route.params.id}`).then(res =>{
-        let formdata = res.data
-        let arr = formdata.domains
 
-        
-        for (let index = 0; index < arr.length; index++) {
-          const element = arr[index]
-          let num = arr[index].text
-          
-          // this.chartData.rows[index] = {'靶次':num, '成绩':arr[index].value} 
-          this.$set(this.chartData.rows, index, {'靶次':num, '成绩':arr[index].value})
-        }
          console.log(this.chartData.rows)
  
       })

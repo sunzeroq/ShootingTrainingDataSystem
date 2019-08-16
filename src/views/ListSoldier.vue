@@ -6,12 +6,14 @@
           <el-form-item label="名字">
             <span>{{ props.row.name }}</span>
           </el-form-item>
-          <el-form-item label="成绩">
-            <span>{{ props.row.domains[0].value}}  </span> 
-            <span>{{ props.row.domains[1].value}}  </span> 
-            <span>{{ props.row.domains[2].value}}  </span> 
-            <span>{{ props.row.domains[3].value}}  </span> 
-            <span>{{ props.row.domains[4].value}}  </span> 
+          <el-form-item v-for="(i, index) in soldierForm"
+                        :label="'成绩'"
+                        :key=""
+                        >
+            <span v-for="value in i.value"
+                  :key=""
+                >{{ props.row.value}}  </span> 
+
           </el-form-item>
           <el-form-item label="序号">
             <span>{{ props.row.ordernumber }}</span>
@@ -99,6 +101,9 @@ export default {
       fetch(){
         this.$http.get('soldierform').then(res =>{
         this.soldierForm = res.data
+        //成绩动态展示
+
+        console.log()
       })
       },
       remove(id){
