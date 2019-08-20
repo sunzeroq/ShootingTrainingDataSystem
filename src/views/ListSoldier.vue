@@ -6,15 +6,7 @@
           <el-form-item label="名字">
             <span>{{ props.row.name }}</span>
           </el-form-item>
-          <el-form-item v-for="(i, index) in soldierForm"
-                        :label="'成绩'"
-                        :key=""
-                        >
-            <span v-for="value in i.value"
-                  :key=""
-                >{{ props.row.value}}  </span> 
-
-          </el-form-item>
+          
           <el-form-item label="序号">
             <span>{{ props.row.ordernumber }}</span>
           </el-form-item>
@@ -103,7 +95,7 @@ export default {
         this.soldierForm = res.data
         //成绩动态展示
 
-        console.log()
+        console.log(this.soldierForm)
       })
       },
       remove(id){

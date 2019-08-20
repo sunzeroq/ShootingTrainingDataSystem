@@ -24,8 +24,7 @@
       </el-table>
         <ve-pie :data="chartData" :settings="chartSettings"></ve-pie>
         <ve-bar :data="chartMoney"></ve-bar>
-        <el-button @click="updata()" icon="el-icon-edit"
-              type="primary" >刷新图表</el-button>
+        
   </div>
 
   
@@ -59,23 +58,25 @@ export default {
     methods:{
       updata(){
         this.$http.get('bullets').then(response => {
-        var res = response.data
-        
-        // for (let i = 0; i < res.length; i++) {
-        //   this.chartData.rows[i] = [{'id': res[i].name, 'number': res[i].num}]
+       
+        let arr = response.data
+          for (let index = 0; index < arr.length; index++) {
+            const element = arr[index]
+            let name = arr[index].name
+            this.$set(this.chartData.rows, index, {'id':name, 'number':arr[index].num})
+            this.$set(this.chartMoney.rows, index, {'型号':name, '收入':arr[index].money})
+            }
           
-        // }
-        
-         this.chartData.rows=[
-                      { 'id': res[0].name, 'number': res[0].money},
-                      { 'id': res[1].name, 'number': res[1].money},
-                      { 'id': res[2].name, 'number': res[2].money}
-                     ]
-         this.chartMoney.rows=[
-                      { '型号': res[0].name, '收入': res[0].num},
-                      { '型号': res[1].name, '收入': res[1].num},
-                      { '型号': res[2].name, '收入': res[2].num}
-                     ]
+        //  this.chartData.rows=[
+        //               { 'id': res[0].name, 'number': res[0].num},
+        //               { 'id': res[1].name, 'number': res[1].num},
+        //               { 'id': res[2].name, 'number': res[2].num}
+        //              ]
+        //  this.chartMoney.rows=[
+        //               { '型号': res[0].name, '收入': res[0].money},
+        //               { '型号': res[1].name, '收入': res[1].money},
+        //               { '型号': res[2].name, '收入': res[2].money}
+        //              ]
                      
       })
       },

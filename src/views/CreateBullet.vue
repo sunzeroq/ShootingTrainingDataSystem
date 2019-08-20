@@ -14,7 +14,7 @@
       <el-input v-model="bullet.num"></el-input>
     </el-form-item>
      <el-form-item label="弹药收入">
-      <el-input v-model="bullet.num"></el-input>
+      <el-input v-model="bullet.money"></el-input>
     </el-form-item>
     <el-form-item>
       <el-button type="primary" native-type="submit">立即创建</el-button>
