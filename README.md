@@ -28,7 +28,7 @@ npm run serve
 ```
 
 
-3.服务端热修改 
+3.服务端热修改  nodemon
 ```
 nodemon serve
 ```
