@@ -1,44 +1,34 @@
-# element-admin
+# ShootingDatabaseSystem
+Vue.js + node.js + express + MongoDB 
+element-UI + v-charts + axios 
+## Project image
+![image](buttles.png)
 
-## Project setup
-```
-npm install
-```
+### Project image
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![image](addgrade.png)
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your tests
-```
-npm run test
-```
+### Project image
 
-### Lints and fixes files
-```
-npm run lint
-```
+![image](grade.png)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Project run
 
 1.启动mongodb 
 ```
 cmd中 mongod --dbpath "C:\Program Files\MongoDB\Server\4.0\data\db"
-```
 再运行  mongo
 ```
 2.运行Vue.cli
 ```
 npm run serve
 ```
+
+
 3.服务端热修改 
 ```
 nodemon serve
-
+```
