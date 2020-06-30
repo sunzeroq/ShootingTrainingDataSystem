@@ -15,7 +15,7 @@
     "echarts": "^4.3.0",
     "element-ui": "^2.12.0",
     "express": "^5.0.0-alpha.7",
-    "express-jwt": "^5.3.1",
+    "express-jwt": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.5",
     "v-charts": "^1.19.0",
